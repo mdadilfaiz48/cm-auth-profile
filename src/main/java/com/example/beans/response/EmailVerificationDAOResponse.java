@@ -1,8 +1,7 @@
 package com.example.beans.response;
 
-public class AuthProfileResourceResponse {
+public class EmailVerificationDAOResponse {
     private String message;
-    private UserDetails details;
 
     public String getMessage() {
         return message;
@@ -12,19 +11,10 @@ public class AuthProfileResourceResponse {
         this.message = message;
     }
 
-    public UserDetails getDetails() {
-        return details;
-    }
-
-    public void setDetails(UserDetails details) {
-        this.details = details;
-    }
-
     @Override
     public String toString() {
-        return "AuthProfileResourceResponse{" +
+        return "RegisterResourceResponse{" +
                 "message='" + message + '\'' +
-                ", details=" + details +
                 '}';
     }
 }
