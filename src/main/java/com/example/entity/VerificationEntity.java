@@ -1,30 +1,45 @@
 package com.example.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 
-@Document (collection = "verification")
+@Document(collection = "verification")
 public class VerificationEntity {
-        @Field("emailId")
-        private String emailId;
-        @Field("email_otp")
-        private String emailOtp;
-        @Field("email_otp_expire_time")
-        private LocalDateTime emailOtpExpireTime;
-        @Field("is_email_verified")
-        private boolean isEmailVerified;
-        @Field("mobile")
-        private String mobile;
-        @Field("mobile_otp")
-        private String mobileOtp;
-        @Field("mobile_otp_expire_time")
-        private LocalDateTime mobileOtpExpireTime;
-        @Field("is_mobile_verified")
-        private boolean isMobileVerified;
-        @Field("is_verification_completed")
-        private boolean isVerificationCompleted;
+    @Id
+    @Field("_id")
+    private String id;
+    @Field("email_id")
+    @Indexed(unique = true)
+    private String emailId;
+    @Field("email_otp")
+    private String emailOtp;
+    @Field("email_otp_expire_time")
+    private LocalDateTime emailOtpExpireTime;
+    @Field("is_email_verified")
+    private boolean isEmailVerified;
+    @Indexed(unique = true)
+    @Field("mobile")
+    private String mobile;
+    @Field("mobile_otp")
+    private String mobileOtp;
+    @Field("mobile_otp_expire_time")
+    private LocalDateTime mobileOtpExpireTime;
+    @Field("is_mobile_verified")
+    private boolean isMobileVerified;
+    @Field("is_verification_completed")
+    private boolean isVerificationCompleted;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getEmailId() {
         return emailId;
@@ -133,5 +148,6 @@ public class VerificationEntity {
                 ", isVerificationCompleted=" + isVerificationCompleted +
                 '}';
     }
+
 
 }

@@ -1,8 +1,6 @@
 package com.example.builder.response;
 
-import com.example.beans.response.EmailVerificationDAOResponse;
-import com.example.beans.response.EmailVerificationResourceResponse;
-import com.example.beans.response.EmailVerificationServiceResponse;
+import com.example.beans.response.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,6 +14,18 @@ public class AuthProfileResponseBuilder {
 
     public EmailVerificationServiceResponse buildEmailServiceResponse(EmailVerificationDAOResponse daoResponse) {
         EmailVerificationServiceResponse serviceResponse = new EmailVerificationServiceResponse();
+        serviceResponse.setMessage(daoResponse.getMessage());
+        return serviceResponse;
+    }
+
+    public PhoneVerificationResourceResponse buildPhoneResourceResponse(PhoneVerificationServiceResponse serviceResponse) {
+        PhoneVerificationResourceResponse response = new PhoneVerificationResourceResponse();
+        response.setMessage(serviceResponse.getMessage());
+        return response;
+    }
+
+    public PhoneVerificationServiceResponse buildPhoneServiceResponse(PhoneVerificationDAOResponse daoResponse) {
+        PhoneVerificationServiceResponse serviceResponse = new PhoneVerificationServiceResponse();
         serviceResponse.setMessage(daoResponse.getMessage());
         return serviceResponse;
     }

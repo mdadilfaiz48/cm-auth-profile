@@ -15,4 +15,6 @@ public interface AuthProfileDAO extends MongoRepository <VerificationEntity, Str
 
     public VerificationEntity findByMobile(String mobile);
 
+    public VerificationEntity findByEmailIdAndMobile(String emailId, String mobile);
+
 }

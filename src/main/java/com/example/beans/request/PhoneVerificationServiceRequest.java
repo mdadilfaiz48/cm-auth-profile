@@ -1,6 +1,6 @@
 package com.example.beans.request;
 
-public class PhoneVerificationResourceRequest {
+public class PhoneVerificationServiceRequest {
     private String emailId;
     private String mobileNo;
     private String otp;
@@ -31,7 +31,7 @@ public class PhoneVerificationResourceRequest {
 
     @Override
     public String toString() {
-        return "PhoneVerificationResourceRequest{" +
+        return "PhoneVerificationServiceRequest{" +
                 "emailId='" + emailId + '\'' +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", otp='" + otp + '\'' +

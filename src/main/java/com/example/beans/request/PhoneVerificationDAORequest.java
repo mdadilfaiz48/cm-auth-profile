@@ -1,9 +1,13 @@
 package com.example.beans.request;
 
-public class PhoneVerificationResourceRequest {
+public class PhoneVerificationDAORequest {
     private String emailId;
     private String mobileNo;
     private String otp;
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
 
     public String getEmailId() {
         return emailId;
@@ -11,10 +15,6 @@ public class PhoneVerificationResourceRequest {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
-    }
-
-    public String getMobileNo() {
-        return mobileNo;
     }
 
     public void setMobileNo(String mobileNo) {
@@ -31,9 +31,8 @@ public class PhoneVerificationResourceRequest {
 
     @Override
     public String toString() {
-        return "PhoneVerificationResourceRequest{" +
-                "emailId='" + emailId + '\'' +
-                ", mobileNo='" + mobileNo + '\'' +
+        return "PhoneVerificationDAORequest{" +
+                "mobileNo='" + mobileNo + '\'' +
                 ", otp='" + otp + '\'' +
                 '}';
     }
