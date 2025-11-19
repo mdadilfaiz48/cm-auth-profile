@@ -2,7 +2,7 @@ package com.example.beans.request;
 
 import java.util.Date;
 
-public class RegisterResourceRequest {
+public class RegisterServiceRequest {
     private String emailId;
     private String firstName;
     private String lastName;
@@ -60,7 +60,7 @@ public class RegisterResourceRequest {
 
     @Override
     public String toString() {
-        return "RegisterResourceRequest{" +
+        return "RegisterServiceRequest{" +
                 "emailId='" + emailId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

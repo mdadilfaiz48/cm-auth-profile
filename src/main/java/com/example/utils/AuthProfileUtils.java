@@ -21,4 +21,14 @@ public class AuthProfileUtils {
         }
         return sb.toString();
     }
+
+    public static String generateUserId() {
+        SecureRandom secureRandom = new SecureRandom();
+        char[] ALPHANUMERIC_UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
+        StringBuilder sb = new StringBuilder(12);
+        for (int i = 0; i < 12; i++) {
+            sb.append(ALPHANUMERIC_UPPER[secureRandom.nextInt(ALPHANUMERIC_UPPER.length)]);
+        }
+        return sb.toString();
+    }
 }

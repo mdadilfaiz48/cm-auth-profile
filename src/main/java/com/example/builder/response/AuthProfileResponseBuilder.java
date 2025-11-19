@@ -29,4 +29,16 @@ public class AuthProfileResponseBuilder {
         serviceResponse.setMessage(daoResponse.getMessage());
         return serviceResponse;
     }
+
+    public RegisterServiceResponse buildRegisterServiceResponse(RegisterDAOResponse daoResponse) {
+        RegisterServiceResponse serviceResponse = new RegisterServiceResponse();
+        serviceResponse.setMessage(daoResponse.getMessage());
+        return serviceResponse;
+    }
+
+    public RegisterResourceResponse buildRegisterResourceResponse(RegisterServiceResponse serviceResponse) {
+        RegisterResourceResponse response = new RegisterResourceResponse();
+        response.setMessage(serviceResponse.getMessage());
+        return response;
+    }
 }

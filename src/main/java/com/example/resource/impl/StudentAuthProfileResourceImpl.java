@@ -74,9 +74,16 @@ public class StudentAuthProfileResourceImpl implements IStudentAuthProfileResour
         return resourceResponse;
     }
 
-    @PostMapping(value = "/register")
+    @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
     public RegisterResourceResponse register(@RequestBody RegisterResourceRequest request){
-        return null;
+
+        RegisterServiceRequest registerServiceRequest = requestBuilder.buildRegisterServiceRequest(request);
+
+        RegisterServiceResponse serviceResponse = service.register(registerServiceRequest);
+
+        RegisterResourceResponse resourceResponse = responseBuilder.buildRegisterResourceResponse(serviceResponse);
+
+        return resourceResponse;
     }
 
 

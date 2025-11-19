@@ -19,20 +19,32 @@ public class AuthProfileRequestBuilder {
         return daoRequest;
     }
 
-       public PhoneVerificationServiceRequest buildPhoneServiceRequest(PhoneVerificationResourceRequest request) {
-           PhoneVerificationServiceRequest serviceRequest = new PhoneVerificationServiceRequest();
-           serviceRequest.setEmailId(request.getEmailId());
-           serviceRequest.setMobileNo(request.getMobileNo());
-           serviceRequest.setOtp(request.getOtp());
-           return serviceRequest;
-       }
+    public PhoneVerificationServiceRequest buildPhoneServiceRequest(PhoneVerificationResourceRequest request) {
+        PhoneVerificationServiceRequest serviceRequest = new PhoneVerificationServiceRequest();
+        serviceRequest.setEmailId(request.getEmailId());
+        serviceRequest.setMobileNo(request.getMobileNo());
+        serviceRequest.setOtp(request.getOtp());
+        return serviceRequest;
+    }
 
-       public PhoneVerificationDAORequest buildPhoneDAORequest(PhoneVerificationServiceRequest request) {
-           PhoneVerificationDAORequest daoRequest = new PhoneVerificationDAORequest();
-           daoRequest.setEmailId(request.getEmailId());
-           daoRequest.setMobileNo(request.getMobileNo());
-           daoRequest.setOtp(request.getOtp());
-           return daoRequest;
-       }
+    public PhoneVerificationDAORequest buildPhoneDAORequest(PhoneVerificationServiceRequest request) {
+        PhoneVerificationDAORequest daoRequest = new PhoneVerificationDAORequest();
+        daoRequest.setEmailId(request.getEmailId());
+        daoRequest.setMobileNo(request.getMobileNo());
+        daoRequest.setOtp(request.getOtp());
+        return daoRequest;
+    }
+
+    public RegisterServiceRequest buildRegisterServiceRequest(RegisterResourceRequest request) {
+        RegisterServiceRequest serviceRequest = new RegisterServiceRequest();
+        serviceRequest.setEmailId(request.getEmailId());
+        serviceRequest.setFirstName(request.getFirstName());
+        serviceRequest.setLastName(request.getLastName());
+        serviceRequest.setDateOfBirth(request.getDateOfBirth());
+        serviceRequest.setUserName(request.getUserName());
+        serviceRequest.setPassword(request.getPassword());
+
+        return serviceRequest;
+    }
 }
 
